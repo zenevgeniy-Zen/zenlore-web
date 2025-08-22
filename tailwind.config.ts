@@ -18,12 +18,34 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				
+				// Zenlore Brand Colors
+				zenlore: {
+					gold: {
+						DEFAULT: 'hsl(var(--zenlore-gold))',
+						light: 'hsl(var(--zenlore-gold-light))',
+						dark: 'hsl(var(--zenlore-gold-dark))',
+					},
+					navy: {
+						DEFAULT: 'hsl(var(--zenlore-navy))',
+						light: 'hsl(var(--zenlore-navy-light))',
+						dark: 'hsl(var(--zenlore-navy-dark))',
+					},
+					gray: {
+						DEFAULT: 'hsl(var(--zenlore-gray))',
+						medium: 'hsl(var(--zenlore-gray-medium))',
+					},
+				},
+				
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
