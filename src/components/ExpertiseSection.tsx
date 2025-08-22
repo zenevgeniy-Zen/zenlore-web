@@ -20,33 +20,29 @@ const ExpertiseSection = () => {
   ];
 
   return (
-    <section id="expertise" className="py-24 bg-background">
+    <section id="expertise" className="py-16 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-zenlore-navy mb-6">
-            Our Expertise
+          <h2 className="text-3xl md:text-4xl font-bold text-zenlore-navy mb-12 uppercase tracking-wide">
+            EXPERTISE
           </h2>
-          <div className="w-24 h-1 bg-gradient-gold mx-auto"></div>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        
+        <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto text-center">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="text-center p-8 rounded-2xl bg-card shadow-subtle hover:shadow-premium transition-all duration-500 hover:transform hover:-translate-y-2 animate-slide-up group"
+              className="animate-slide-up"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="w-16 h-16 mx-auto mb-6 bg-gradient-gold rounded-full flex items-center justify-center group-hover:shadow-gold-glow transition-all duration-300">
-                <service.icon className="w-8 h-8 text-zenlore-navy" />
+              <div className="w-16 h-16 mx-auto mb-4">
+                <service.icon className="w-full h-full text-zenlore-navy" />
               </div>
               
-              <h3 className="text-xl font-semibold text-zenlore-navy mb-4">
+              <h3 className="text-lg font-semibold text-zenlore-navy mb-3">
                 {service.title}
               </h3>
-              
-              <p className="text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
             </div>
           ))}
         </div>

@@ -25,35 +25,14 @@ const PhilosophySection = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-gradient-navy text-white">
+    <section id="about" className="py-16 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Our Philosophy
-          </h2>
-          <div className="w-24 h-1 bg-zenlore-gold mx-auto"></div>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {principles.map((principle, index) => (
-            <div 
-              key={index}
-              className="text-center p-6 animate-slide-up group"
-              style={{ animationDelay: `${index * 0.15}s` }}
-            >
-              <div className="w-12 h-12 mx-auto mb-4 text-zenlore-gold group-hover:scale-110 transition-transform duration-300">
-                <principle.icon className="w-full h-full" />
-              </div>
-              
-              <h3 className="text-lg font-semibold mb-3 text-zenlore-gold">
-                {principle.title}
-              </h3>
-              
-              <p className="text-white/80 text-sm leading-relaxed">
-                {principle.description}
-              </p>
-            </div>
-          ))}
+        <div className="text-left max-w-4xl">
+          <div className="space-y-6">
+            <div className="text-zenlore-navy font-medium">Balance over haste</div>
+            <div className="text-zenlore-navy font-medium">Innovation grounded in wisdom</div>
+            <div className="text-zenlore-navy font-medium">Technology with a human touch</div>
+          </div>
         </div>
       </div>
     </section>
