@@ -1,3 +1,5 @@
+import zenlorelogo from "@/assets/zenlore-logo.png";
+
 const Footer = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -9,8 +11,15 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="text-center">
           {/* Logo */}
-          <div className="font-semibold text-2xl mb-8">
-            UA27 <span className="text-zenlore-gold">Zenlore</span>
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <img 
+              src={zenlorelogo} 
+              alt="Zenlore" 
+              className="w-12 h-12"
+            />
+            <span className="font-semibold text-2xl">
+              UA27 <span className="text-zenlore-gold">Zenlore</span>
+            </span>
           </div>
           
           {/* Navigation */}

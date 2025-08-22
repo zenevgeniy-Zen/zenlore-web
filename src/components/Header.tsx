@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import zenlorelogo from "@/assets/zenlore-logo.png";
 
 const Header = () => {
   const scrollToSection = (sectionId: string) => {
@@ -10,8 +11,15 @@ const Header = () => {
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="font-semibold text-xl text-zenlore-navy">
-          UA27 <span className="text-zenlore-gold">Zenlore</span>
+        <div className="flex items-center gap-3">
+          <img 
+            src={zenlorelogo} 
+            alt="Zenlore" 
+            className="w-10 h-10 hover:scale-105 transition-transform duration-300"
+          />
+          <span className="font-semibold text-xl text-zenlore-navy hidden sm:block">
+            UA27 <span className="text-zenlore-gold">Zenlore</span>
+          </span>
         </div>
         
         {/* Navigation */}
