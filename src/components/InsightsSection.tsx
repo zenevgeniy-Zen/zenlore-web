@@ -62,6 +62,16 @@ const InsightsSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-zenlore-navy mb-12 uppercase tracking-wide">
             INSIGHTS
           </h2>
+          
+          <div className="max-w-4xl mx-auto mb-12">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              At Zenlore, we believe that true expertise is measured not just by what we know — but by how we apply it.
+              Our work spans across industries and technologies, guided by a philosophy of balanced innovation and deep understanding.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Below are a few selected case studies that demonstrate how we help our clients turn complexity into clarity, and vision into reality.
+            </p>
+          </div>
         </div>
 
         {/* Cases - One under another */}
