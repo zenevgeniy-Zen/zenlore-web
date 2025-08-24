@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { Menu } from "lucide-react";
 import ContactDialog from "./ContactDialog";
 
@@ -75,41 +75,45 @@ const Header = () => {
         {/* Mobile Layout */}
         <div className="md:hidden flex items-center justify-between w-full">
           {/* Hamburger Menu */}
-          <Sheet>
-            <SheetTrigger asChild>
+          <Popover>
+            <PopoverTrigger asChild>
               <Button variant="ghost" size="icon" className="text-white hover:text-zenlore-gold">
                 <Menu className="h-6 w-6" />
               </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="bg-zenlore-navy border-zenlore-gold p-6">
-              <nav className="flex flex-col space-y-4 mt-8">
+            </PopoverTrigger>
+            <PopoverContent 
+              className="w-56 bg-zenlore-navy border-zenlore-gold p-4 mt-2"
+              side="bottom"
+              align="start"
+            >
+              <nav className="flex flex-col space-y-3">
                 <button 
                   onClick={() => scrollToSection('expertise')}
-                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left py-3 hover:bg-white/10 rounded px-3 text-lg"
+                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left py-2 hover:bg-white/10 rounded px-2"
                 >
                   Expertise
                 </button>
                 <button 
                   onClick={() => scrollToSection('insights')}
-                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left py-3 hover:bg-white/10 rounded px-3 text-lg"
+                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left py-2 hover:bg-white/10 rounded px-2"
                 >
                   Insights
                 </button>
                 <button 
                   onClick={() => scrollToSection('about')}
-                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left py-3 hover:bg-white/10 rounded px-3 text-lg"
+                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left py-2 hover:bg-white/10 rounded px-2"
                 >
                   About
                 </button>
                 <button 
                   onClick={() => scrollToSection('contact')}
-                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left py-3 hover:bg-white/10 rounded px-3 text-lg"
+                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left py-2 hover:bg-white/10 rounded px-2"
                 >
                   Contact
                 </button>
                 
                 {/* Mobile START THE JOURNEY кнопка */}
-                <div className="pt-6 border-t border-zenlore-gold/30">
+                <div className="pt-3 border-t border-zenlore-gold/30">
                   <Button 
                     variant="outline" 
                     size="lg"
@@ -121,8 +125,8 @@ const Header = () => {
                   </Button>
                 </div>
               </nav>
-            </SheetContent>
-          </Sheet>
+            </PopoverContent>
+          </Popover>
 
           {/* Mobile Logo (centered) */}
           <div className="flex items-center justify-center flex-1">
