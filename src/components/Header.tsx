@@ -71,8 +71,9 @@ const Header = () => {
 
         {/* Tablet Layout (md only) */}
         <div className="hidden md:flex lg:hidden flex-col items-center space-y-4">
-          <div className="flex items-center justify-between w-full">
-            <div className="flex items-center gap-3 flex-shrink-0">
+          <div className="flex items-center justify-center w-full relative">
+            {/* Logo центрований вертикально */}
+            <div className="absolute left-0 flex items-center gap-3">
               <div className="w-[90px] h-[90px] rounded-full flex items-center justify-center overflow-hidden shadow-[0_8px_32px_-4px_rgba(0,0,0,0.3),0_4px_16px_-2px_rgba(0,0,0,0.2)] border-2 transition-all duration-300 hover:shadow-[0_12px_40px_-4px_rgba(0,0,0,0.4),0_6px_20px_-2px_rgba(0,0,0,0.3)] hover:scale-105" style={{ backgroundColor: '#0B0C0D', borderColor: '#0B0C0D' }}>
                 <img 
                   src="/lovable-uploads/a996b871-738a-4698-ab48-a48cd59045bf.png" 
@@ -82,6 +83,7 @@ const Header = () => {
               </div>
             </div>
             
+            {/* Навігація по центру */}
             <nav className="flex items-center space-x-6">
               <button 
                 onClick={() => scrollToSection('home')}
