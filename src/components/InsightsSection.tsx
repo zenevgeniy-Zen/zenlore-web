@@ -80,15 +80,26 @@ const InsightsSection = () => {
                   `}
                   onClick={() => setSelectedCase(selectedCase === index ? null : index)}
                 >
-                  <h3 className={`
-                    text-xl md:text-2xl font-medium transition-colors duration-300
-                    ${isSelected 
-                      ? 'text-zenlore-gold' 
-                      : 'text-zenlore-navy/70 group-hover:text-zenlore-gold'
-                    }
-                  `}>
-                    {caseItem.title}
-                  </h3>
+                  <div className="flex items-center gap-4">
+                    <caseItem.icon 
+                      className={`
+                        w-8 h-8 md:w-10 md:h-10 transition-colors duration-300
+                        ${isSelected 
+                          ? 'text-zenlore-gold' 
+                          : 'text-zenlore-navy/70 group-hover:text-zenlore-gold'
+                        }
+                      `}
+                    />
+                    <h3 className={`
+                      text-xl md:text-2xl font-medium transition-colors duration-300
+                      ${isSelected 
+                        ? 'text-zenlore-gold' 
+                        : 'text-zenlore-navy/70 group-hover:text-zenlore-gold'
+                      }
+                    `}>
+                      {caseItem.title}
+                    </h3>
+                  </div>
                 </div>
 
                 {/* Case Description */}
