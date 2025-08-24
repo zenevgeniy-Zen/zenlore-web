@@ -11,7 +11,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-18 h-18 bg-white rounded-full flex items-center justify-center overflow-hidden">
+          <div className="w-[72px] h-[72px] bg-white rounded-full flex items-center justify-center overflow-hidden">
             <img 
               src="/lovable-uploads/a996b871-738a-4698-ab48-a48cd59045bf.png" 
               alt="Zenlore Logo" 
