@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Brain, Shield, Globe } from "lucide-react";
 
 const InsightsSection = () => {
-  const [selectedCase, setSelectedCase] = useState(0);
+  const [selectedCase, setSelectedCase] = useState<number | null>(null);
 
   const cases = [
     {
@@ -56,90 +56,81 @@ const InsightsSection = () => {
   ];
 
   return (
-    <section id="insights" className="py-20 bg-gradient-to-br from-zenlore-navy via-zenlore-navy-light to-zenlore-navy">
+    <section id="insights" className="py-16 bg-background">
       <div className="container mx-auto px-6">
-        {/* Section Title */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-3xl md:text-4xl font-bold text-zenlore-navy mb-12 uppercase tracking-wide">
             INSIGHTS
           </h2>
-          <div className="w-24 h-1 bg-gradient-gold mx-auto"></div>
         </div>
 
-        {/* Cases Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {/* Cases - One under another */}
+        <div className="max-w-4xl mx-auto space-y-8">
           {cases.map((caseItem, index) => {
-            const IconComponent = caseItem.icon;
             const isSelected = selectedCase === index;
             const isBlurred = selectedCase !== null && selectedCase !== index;
 
             return (
-              <div key={index} className="text-center">
-                {/* Case Item */}
+              <div key={index} className="space-y-4">
+                {/* Case Title */}
                 <div
                   className={`
-                    cursor-pointer transition-all duration-500 p-6 rounded-lg
-                    ${isBlurred ? 'blur-sm opacity-50 scale-95' : 'hover:scale-105'}
-                    ${isSelected ? 'bg-white/10 shadow-gold-glow' : 'hover:bg-white/5'}
+                    cursor-pointer transition-all duration-500 group text-left
+                    ${isBlurred ? 'blur-sm opacity-60 scale-95' : 'blur-none opacity-100 scale-100'}
                   `}
-                  onClick={() => setSelectedCase(index)}
+                  onClick={() => setSelectedCase(selectedCase === index ? null : index)}
                 >
-                  <div className="flex flex-col items-center">
-                    <div className={`
-                      mb-4 p-4 rounded-full transition-all duration-300
-                      ${isSelected ? 'bg-gradient-gold text-zenlore-navy' : 'bg-white/10 text-zenlore-gold'}
-                    `}>
-                      <IconComponent 
-                        size={48} 
-                        className={isBlurred ? 'text-zenlore-navy' : ''} 
-                      />
-                    </div>
-                    <h3 className={`
-                      text-xl font-semibold mb-2 transition-colors duration-300
-                      ${isSelected ? 'text-zenlore-gold' : 'text-white'}
-                    `}>
-                      {caseItem.title}
-                    </h3>
-                    <p className="text-zenlore-gray text-sm">
-                      {caseItem.shortDesc}
-                    </p>
-                  </div>
+                  <h3 className={`
+                    text-xl md:text-2xl font-medium transition-colors duration-300
+                    ${isSelected 
+                      ? 'text-zenlore-gold' 
+                      : 'text-zenlore-navy/70 group-hover:text-zenlore-gold'
+                    }
+                  `}>
+                    {caseItem.title}
+                  </h3>
                 </div>
 
-                {/* Mobile Description */}
+                {/* Case Description */}
                 {isSelected && (
-                  <div className="md:hidden mt-6 p-6 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10 animate-fade-in">
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="text-zenlore-gold font-semibold mb-2">Client:</h4>
-                        <p className="text-white text-sm">{caseItem.fullDesc.client}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="text-zenlore-gold font-semibold mb-2">Challenge:</h4>
-                        <p className="text-white text-sm">{caseItem.fullDesc.challenge}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="text-zenlore-gold font-semibold mb-2">Solution:</h4>
-                        <p className="text-white text-sm">{caseItem.fullDesc.solution}</p>
-                      </div>
-                      
-                      <div>
-                        <h4 className="text-zenlore-gold font-semibold mb-2">Results:</h4>
-                        <ul className="space-y-1">
-                          {caseItem.fullDesc.results.map((result, idx) => (
-                            <li key={idx} className="text-white text-sm flex items-start">
-                              <span className="text-zenlore-gold mr-2">•</span>
-                              {result}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      <div>
-                        <h4 className="text-zenlore-gold font-semibold mb-2">Why it mattered:</h4>
-                        <p className="text-white text-sm">{caseItem.fullDesc.impact}</p>
+                  <div className="animate-fade-in pl-0 md:pl-6">
+                    <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-6 md:p-8 border border-zenlore-gold/20">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                        <div className="space-y-4">
+                          <div>
+                            <h4 className="text-zenlore-gold font-semibold mb-2">Client:</h4>
+                            <p className="text-zenlore-navy/80 text-sm md:text-base">{caseItem.fullDesc.client}</p>
+                          </div>
+                          
+                          <div>
+                            <h4 className="text-zenlore-gold font-semibold mb-2">Challenge:</h4>
+                            <p className="text-zenlore-navy/80 text-sm md:text-base">{caseItem.fullDesc.challenge}</p>
+                          </div>
+                          
+                          <div>
+                            <h4 className="text-zenlore-gold font-semibold mb-2">Solution:</h4>
+                            <p className="text-zenlore-navy/80 text-sm md:text-base">{caseItem.fullDesc.solution}</p>
+                          </div>
+                        </div>
+                        
+                        <div className="space-y-4">
+                          <div>
+                            <h4 className="text-zenlore-gold font-semibold mb-2">Results:</h4>
+                            <ul className="space-y-2">
+                              {caseItem.fullDesc.results.map((result, idx) => (
+                                <li key={idx} className="text-zenlore-navy/80 text-sm md:text-base flex items-start">
+                                  <span className="text-zenlore-gold mr-2">•</span>
+                                  {result}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          
+                          <div>
+                            <h4 className="text-zenlore-gold font-semibold mb-2">Why it mattered:</h4>
+                            <p className="text-zenlore-navy/80 text-sm md:text-base">{caseItem.fullDesc.impact}</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -148,49 +139,6 @@ const InsightsSection = () => {
             );
           })}
         </div>
-
-        {/* Desktop Description */}
-        {selectedCase !== null && (
-          <div className="hidden md:block p-8 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10 animate-fade-in">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <div>
-                  <h4 className="text-zenlore-gold font-semibold mb-2">Client:</h4>
-                  <p className="text-white">{cases[selectedCase].fullDesc.client}</p>
-                </div>
-                
-                <div>
-                  <h4 className="text-zenlore-gold font-semibold mb-2">Challenge:</h4>
-                  <p className="text-white">{cases[selectedCase].fullDesc.challenge}</p>
-                </div>
-                
-                <div>
-                  <h4 className="text-zenlore-gold font-semibold mb-2">Solution:</h4>
-                  <p className="text-white">{cases[selectedCase].fullDesc.solution}</p>
-                </div>
-              </div>
-              
-              <div className="space-y-4">
-                <div>
-                  <h4 className="text-zenlore-gold font-semibold mb-2">Results:</h4>
-                  <ul className="space-y-2">
-                    {cases[selectedCase].fullDesc.results.map((result, idx) => (
-                      <li key={idx} className="text-white flex items-start">
-                        <span className="text-zenlore-gold mr-2">•</span>
-                        {result}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div>
-                  <h4 className="text-zenlore-gold font-semibold mb-2">Why it mattered:</h4>
-                  <p className="text-white">{cases[selectedCase].fullDesc.impact}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );
