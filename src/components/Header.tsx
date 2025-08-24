@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import ContactDialog from "./ContactDialog";
 
 const Header = () => {
@@ -73,8 +73,8 @@ const Header = () => {
 
         {/* Mobile Logo з dropdown */}
         <div className="md:hidden flex items-center justify-center w-full">
-          <HoverCard openDelay={200} closeDelay={300}>
-            <HoverCardTrigger asChild>
+          <Popover>
+            <PopoverTrigger asChild>
               <div className="flex items-center gap-3 flex-shrink-0 cursor-pointer">
                 <div className="w-[115px] h-[115px] rounded-full flex items-center justify-center overflow-hidden shadow-[0_8px_32px_-4px_rgba(0,0,0,0.3),0_4px_16px_-2px_rgba(0,0,0,0.2)] border-2 transition-all duration-300 hover:shadow-[0_12px_40px_-4px_rgba(0,0,0,0.4),0_6px_20px_-2px_rgba(0,0,0,0.3)] hover:scale-105" style={{ backgroundColor: '#0B0C0D', borderColor: '#0B0C0D' }}>
                   <img 
@@ -84,8 +84,8 @@ const Header = () => {
                   />
                 </div>
               </div>
-            </HoverCardTrigger>
-            <HoverCardContent 
+            </PopoverTrigger>
+            <PopoverContent 
               className="w-56 bg-zenlore-navy border-zenlore-gold p-4 mt-2"
               side="bottom"
             >
@@ -128,8 +128,8 @@ const Header = () => {
                   </Button>
                 </div>
               </nav>
-            </HoverCardContent>
-          </HoverCard>
+            </PopoverContent>
+          </Popover>
         </div>
       </div>
       
