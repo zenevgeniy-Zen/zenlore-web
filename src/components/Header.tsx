@@ -11,16 +11,13 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center p-1">
+          <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden">
             <img 
               src="/lovable-uploads/a996b871-738a-4698-ab48-a48cd59045bf.png" 
               alt="Zenlore Logo" 
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover scale-110"
             />
           </div>
-          <span className="text-white text-lg font-semibold">
-            ZENLORE
-          </span>
         </div>
         
         {/* Navigation */}
