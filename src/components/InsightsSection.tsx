@@ -65,7 +65,7 @@ const InsightsSection = () => {
         </div>
 
         {/* Cases - One under another */}
-        <div className="max-w-4xl mx-auto space-y-8 text-center">
+        <div className="max-w-4xl mx-auto space-y-8">
           {cases.map((caseItem, index) => {
             const isSelected = selectedCase === index;
             const isBlurred = selectedCase !== null && selectedCase !== index;
@@ -86,7 +86,7 @@ const InsightsSection = () => {
                         w-8 h-8 md:w-10 md:h-10 transition-colors duration-300
                         ${isSelected 
                           ? 'text-zenlore-gold' 
-                          : 'text-zenlore-navy/70 group-hover:text-zenlore-gold'
+                          : 'text-zenlore-navy group-hover:text-zenlore-gold'
                         }
                       `}
                     />
@@ -105,7 +105,7 @@ const InsightsSection = () => {
                 {/* Case Description */}
                 {isSelected && (
                   <div className="animate-fade-in pl-0 md:pl-6">
-                    <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-6 md:p-8 border border-zenlore-gold/20">
+                    <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-6 md:p-8 border border-zenlore-gold/20 text-left">
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
                         <div className="space-y-4">
                           <div>
