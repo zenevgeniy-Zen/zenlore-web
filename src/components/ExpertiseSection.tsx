@@ -57,7 +57,7 @@ const ExpertiseSection = () => {
           {services.slice(0, 3).map((service, index) => (
             <div 
               key={index}
-              className={`animate-slide-up cursor-pointer transition-all duration-500 ${
+              className={`animate-slide-up cursor-pointer transition-all duration-500 group ${
                 selectedService !== null && selectedService !== index 
                   ? 'blur-sm opacity-60 scale-95' 
                   : 'blur-none opacity-100 scale-100 hover:scale-105'
@@ -69,12 +69,20 @@ const ExpertiseSection = () => {
                 selectedService === index ? 'transform scale-110' : ''
               }`}>
                 <service.icon className={`w-full h-full transition-colors duration-300 ${
-                  selectedService === index ? 'text-zenlore-gold' : 'text-zenlore-navy'
+                  selectedService === index 
+                    ? 'text-zenlore-gold' 
+                    : selectedService !== null && selectedService !== index
+                    ? 'text-purple-400'
+                    : 'text-zenlore-navy group-hover:text-zenlore-gold'
                 }`} />
               </div>
               
               <h3 className={`text-lg font-semibold mb-3 transition-colors duration-300 ${
-                selectedService === index ? 'text-zenlore-gold' : 'text-zenlore-navy'
+                selectedService === index 
+                  ? 'text-zenlore-gold' 
+                  : selectedService !== null && selectedService !== index
+                  ? 'text-purple-400'
+                  : 'text-zenlore-navy group-hover:text-zenlore-gold'
               }`}>
                 {service.title}
               </h3>
@@ -101,7 +109,7 @@ const ExpertiseSection = () => {
             return (
               <div 
                 key={actualIndex}
-                className={`animate-slide-up cursor-pointer transition-all duration-500 ${
+                className={`animate-slide-up cursor-pointer transition-all duration-500 group ${
                   selectedService !== null && selectedService !== actualIndex 
                     ? 'blur-sm opacity-60 scale-95' 
                     : 'blur-none opacity-100 scale-100 hover:scale-105'
@@ -113,12 +121,20 @@ const ExpertiseSection = () => {
                   selectedService === actualIndex ? 'transform scale-110' : ''
                 }`}>
                   <service.icon className={`w-full h-full transition-colors duration-300 ${
-                    selectedService === actualIndex ? 'text-zenlore-gold' : 'text-zenlore-navy'
+                    selectedService === actualIndex 
+                      ? 'text-zenlore-gold' 
+                      : selectedService !== null && selectedService !== actualIndex
+                      ? 'text-purple-400'
+                      : 'text-zenlore-navy group-hover:text-zenlore-gold'
                   }`} />
                 </div>
                 
                 <h3 className={`text-lg font-semibold mb-3 transition-colors duration-300 ${
-                  selectedService === actualIndex ? 'text-zenlore-gold' : 'text-zenlore-navy'
+                  selectedService === actualIndex 
+                    ? 'text-zenlore-gold' 
+                    : selectedService !== null && selectedService !== actualIndex
+                    ? 'text-purple-400'
+                    : 'text-zenlore-navy group-hover:text-zenlore-gold'
                 }`}>
                   {service.title}
                 </h3>
