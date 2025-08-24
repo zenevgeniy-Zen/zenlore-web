@@ -33,12 +33,6 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <button 
-            onClick={() => scrollToSection('home')}
-            className="text-white hover:text-zenlore-gold transition-colors duration-300"
-          >
-            Home
-          </button>
-          <button 
             onClick={() => scrollToSection('expertise')}
             className="text-white hover:text-zenlore-gold transition-colors duration-300"
           >
@@ -96,12 +90,6 @@ const Header = () => {
               side="bottom"
             >
               <nav className="flex flex-col space-y-3">
-                <button 
-                  onClick={() => scrollToSection('home')}
-                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left py-2 hover:bg-white/10 rounded px-2"
-                >
-                  Home
-                </button>
                 <button 
                   onClick={() => scrollToSection('expertise')}
                   className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left py-2 hover:bg-white/10 rounded px-2"
