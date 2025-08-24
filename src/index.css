@@ -9,20 +9,20 @@
 @layer base {
   :root {
     /* Core Brand Colors - HSL format */
-    --background: 0 0% 100%;
+    --background: 249 10% 98%; /* #F8F9FA */
     --foreground: 220 25% 15%;
     
     /* Zenlore Brand Palette */
-    --zenlore-gold: 43 74% 58%;
-    --zenlore-gold-light: 43 74% 68%;
-    --zenlore-gold-dark: 43 74% 48%;
+    --zenlore-gold: 51 88% 55%; /* #D4AF37 */
+    --zenlore-gold-light: 51 88% 65%;
+    --zenlore-gold-dark: 51 88% 45%;
     
-    --zenlore-navy: 221 45% 15%;
-    --zenlore-navy-light: 221 35% 25%;
-    --zenlore-navy-dark: 221 55% 8%;
+    --zenlore-navy: 225 65% 15%; /* #1C1F33 */
+    --zenlore-navy-light: 225 55% 25%;
+    --zenlore-navy-dark: 225 75% 8%;
     
-    --zenlore-gray: 220 10% 97%;
-    --zenlore-gray-medium: 220 8% 85%;
+    --zenlore-gray: 249 10% 98%; /* Match background */
+    --zenlore-gray-medium: 220 8% 90%;
     
     /* Semantic Mappings */
     --primary: var(--zenlore-navy);
@@ -137,17 +137,17 @@
     scroll-behavior: smooth;
   }
   
-  /* Custom scroll animations */
+  /* Custom scroll animations - slow and smooth */
   .animate-fade-in {
-    animation: fade-in 0.8s ease-out forwards;
+    animation: fade-in 1.2s ease-out forwards;
   }
   
   .animate-slide-up {
-    animation: slide-up 0.8s ease-out forwards;
+    animation: slide-up 1.2s ease-out forwards;
   }
   
   .animate-delayed {
-    animation-delay: 0.2s;
+    animation-delay: 0.4s;
   }
   
   @keyframes fade-in {
