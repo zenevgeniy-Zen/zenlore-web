@@ -1,4 +1,5 @@
 import { useEffect, useState, RefObject } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface UseScrollGlowOptions {
   threshold?: number;
@@ -11,9 +12,13 @@ export const useScrollGlow = (
   options: UseScrollGlowOptions = {}
 ) => {
   const { threshold = 0.3, rootMargin = '0px', delay = 200 } = options;
+  const isMobile = useIsMobile();
   const [glowingElements, setGlowingElements] = useState<Set<number>>(new Set());
 
   useEffect(() => {
+    // Only work on mobile devices
+    if (!isMobile) return;
+    
     const observers: IntersectionObserver[] = [];
 
     refs.forEach((ref, index) => {
@@ -48,7 +53,7 @@ export const useScrollGlow = (
     return () => {
       observers.forEach(observer => observer.disconnect());
     };
-  }, [refs, threshold, rootMargin, delay]);
+  }, [refs, threshold, rootMargin, delay, isMobile]);
 
   return glowingElements;
 };
