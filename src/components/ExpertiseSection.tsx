@@ -72,7 +72,7 @@ const ExpertiseSection = () => {
                   selectedService === index 
                     ? 'text-zenlore-gold' 
                     : selectedService !== null && selectedService !== index
-                    ? 'text-cyan-700'
+                    ? 'text-zenlore-navy'
                     : 'text-zenlore-navy group-hover:text-zenlore-gold'
                 }`} />
               </div>
@@ -81,7 +81,7 @@ const ExpertiseSection = () => {
                 selectedService === index 
                   ? 'text-zenlore-gold' 
                   : selectedService !== null && selectedService !== index
-                  ? 'text-cyan-700'
+                  ? 'text-zenlore-navy'
                   : 'text-zenlore-navy group-hover:text-zenlore-gold'
               }`}>
                 {service.title}
@@ -124,7 +124,7 @@ const ExpertiseSection = () => {
                     selectedService === actualIndex 
                       ? 'text-zenlore-gold' 
                       : selectedService !== null && selectedService !== actualIndex
-                      ? 'text-cyan-700'
+                      ? 'text-zenlore-navy'
                       : 'text-zenlore-navy group-hover:text-zenlore-gold'
                   }`} />
                 </div>
@@ -133,7 +133,7 @@ const ExpertiseSection = () => {
                   selectedService === actualIndex 
                     ? 'text-zenlore-gold' 
                     : selectedService !== null && selectedService !== actualIndex
-                    ? 'text-cyan-700'
+                    ? 'text-zenlore-navy'
                     : 'text-zenlore-navy group-hover:text-zenlore-gold'
                 }`}>
                   {service.title}
