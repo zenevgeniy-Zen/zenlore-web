@@ -3,7 +3,7 @@ const Footer = () => {
     <footer id="contact" className="py-12 bg-background text-center">
       <div className="container mx-auto px-6">
         <p className="text-muted-foreground">
-          Zenlore —The Art of Balanced Innovation.
+          Zenlore — Wisdom Multiplies Innovation
         </p>
 
       </div>
