@@ -56,11 +56,11 @@ const ExpertiseSection = () => {
         <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto text-center">
           {services.slice(0, 3).map((service, index) => (
             <div key={index}>
-              <div 
+                <div 
                 className={`animate-slide-up cursor-pointer transition-all duration-500 group ${
                   selectedService !== null && selectedService !== index 
                     ? 'blur-sm opacity-60 scale-95' 
-                    : 'blur-none opacity-100 scale-100 hover:scale-105'
+                    : 'blur-none opacity-100 scale-100 hover:scale-105 active:scale-110'
                 }`}
                 style={{ animationDelay: `${index * 0.2}s` }}
                 onClick={() => setSelectedService(selectedService === index ? null : index)}
@@ -73,7 +73,7 @@ const ExpertiseSection = () => {
                       ? 'text-zenlore-gold' 
                       : selectedService !== null && selectedService !== index
                       ? 'text-zenlore-navy'
-                      : 'text-zenlore-navy group-hover:text-zenlore-gold'
+                      : 'text-zenlore-navy group-hover:text-zenlore-gold group-active:text-zenlore-gold'
                   }`} />
                 </div>
                 
@@ -82,7 +82,7 @@ const ExpertiseSection = () => {
                     ? 'text-zenlore-gold' 
                     : selectedService !== null && selectedService !== index
                     ? 'text-zenlore-navy'
-                    : 'text-zenlore-navy group-hover:text-zenlore-gold'
+                    : 'text-zenlore-navy group-hover:text-zenlore-gold group-active:text-zenlore-gold'
                 }`}>
                   {service.title}
                 </h3>
@@ -125,7 +125,7 @@ const ExpertiseSection = () => {
                   className={`animate-slide-up cursor-pointer transition-all duration-500 group ${
                     selectedService !== null && selectedService !== actualIndex 
                       ? 'blur-sm opacity-60 scale-95' 
-                      : 'blur-none opacity-100 scale-100 hover:scale-105'
+                      : 'blur-none opacity-100 scale-100 hover:scale-105 active:scale-110'
                   }`}
                   style={{ animationDelay: `${actualIndex * 0.2}s` }}
                   onClick={() => setSelectedService(selectedService === actualIndex ? null : actualIndex)}
@@ -138,7 +138,7 @@ const ExpertiseSection = () => {
                         ? 'text-zenlore-gold' 
                         : selectedService !== null && selectedService !== actualIndex
                         ? 'text-zenlore-navy'
-                        : 'text-zenlore-navy group-hover:text-zenlore-gold'
+                        : 'text-zenlore-navy group-hover:text-zenlore-gold group-active:text-zenlore-gold'
                     }`} />
                   </div>
                   
@@ -147,7 +147,7 @@ const ExpertiseSection = () => {
                       ? 'text-zenlore-gold' 
                       : selectedService !== null && selectedService !== actualIndex
                       ? 'text-zenlore-navy'
-                      : 'text-zenlore-navy group-hover:text-zenlore-gold'
+                      : 'text-zenlore-navy group-hover:text-zenlore-gold group-active:text-zenlore-gold'
                   }`}>
                     {service.title}
                   </h3>

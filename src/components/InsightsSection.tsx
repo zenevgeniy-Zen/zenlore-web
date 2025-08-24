@@ -86,7 +86,7 @@ const InsightsSection = () => {
                 <div
                   className={`
                     cursor-pointer transition-all duration-500 group text-center
-                    ${isBlurred ? 'blur-sm opacity-60 scale-95' : 'blur-none opacity-100 scale-100'}
+                    ${isBlurred ? 'blur-sm opacity-60 scale-95' : 'blur-none opacity-100 scale-100 active:scale-105'}
                   `}
                   onClick={() => setSelectedCase(selectedCase === index ? null : index)}
                 >
@@ -96,7 +96,7 @@ const InsightsSection = () => {
                         w-8 h-8 md:w-10 md:h-10 transition-colors duration-300
                         ${isSelected 
                           ? 'text-zenlore-gold' 
-                          : 'text-zenlore-navy group-hover:text-zenlore-gold'
+                          : 'text-zenlore-navy group-hover:text-zenlore-gold group-active:text-zenlore-gold'
                         }
                       `}
                     />
@@ -104,7 +104,7 @@ const InsightsSection = () => {
                       text-2xl md:text-3xl font-light italic leading-relaxed transition-colors duration-300
                       ${isSelected 
                         ? 'text-zenlore-gold' 
-                        : 'text-zenlore-navy group-hover:text-zenlore-gold'
+                        : 'text-zenlore-navy group-hover:text-zenlore-gold group-active:text-zenlore-gold'
                       }
                     `}>
                       {caseItem.title}
