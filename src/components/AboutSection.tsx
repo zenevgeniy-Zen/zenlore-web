@@ -4,8 +4,8 @@ const AboutSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
-            <h2 className="text-3xl md:text-4xl font-light text-zenlore-navy mb-8">
-              About Us
+            <h2 className="text-4xl md:text-5xl font-light text-zenlore-navy mb-12 text-center">
+              About
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
