@@ -13,22 +13,8 @@ const PhilosophySection = () => {
               Whether you're exploring a new idea, scaling a product, or building tech infrastructure — our team is here to help.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-xl font-semibold text-zenlore-navy mb-6">Offices / Locations</h3>
-                <div className="space-y-3 text-muted-foreground">
-                  <div>📍 USA – Charlotte, NC - charlotte@zenlore.tech</div>
-                  <div>📍 UK – London - london@zenlore.tech</div>
-                  <div>📍 Austria – Vienna - vienna@zenlore.tech</div>
-                  <div>📍 Israel – Tel Aviv - telaviv@zenlore.tech</div>
-                  <div>📍 Ukraine – Kyiv - kyiv@zenlore.tech</div>
-                </div>
-                <p className="text-muted-foreground mt-4 italic">
-                  Remote-first team. Available across time zones.
-                </p>
-              </div>
-
-              <div>
+            <div className="grid md:grid-cols-1 gap-12">
+              <div className="text-center">
                 <h3 className="text-xl font-semibold text-zenlore-navy mb-6">Direct Email</h3>
                 <div className="space-y-3 text-muted-foreground mb-8">
                   <div>General Inquiries: hello@zenlore.tech</div>
