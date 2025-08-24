@@ -1,11 +1,19 @@
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
+import ContactDialog from "./ContactDialog";
 
 const Header = () => {
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const openContactDialog = () => {
+    setIsContactDialogOpen(true);
   };
 
   return (
@@ -61,7 +69,7 @@ const Header = () => {
           <Button 
             variant="outline" 
             size="lg"
-            onClick={() => scrollToSection('hero')}
+            onClick={openContactDialog}
             className="border-zenlore-gold text-zenlore-gold hover:!bg-transparent hover:!text-zenlore-gold px-6 lg:px-8 py-3 text-sm transform hover:scale-105 transition-all duration-300"
             style={{ backgroundColor: '#0B0C0D' }}
           >
@@ -124,7 +132,7 @@ const Header = () => {
                   <Button 
                     variant="outline" 
                     size="lg"
-                    onClick={() => scrollToSection('hero')}
+                    onClick={openContactDialog}
                     className="border-zenlore-gold text-zenlore-gold hover:!bg-transparent hover:!text-zenlore-gold w-full py-3 text-sm transform hover:scale-105 transition-all duration-300"
                     style={{ backgroundColor: '#0B0C0D' }}
                   >
@@ -136,6 +144,11 @@ const Header = () => {
           </HoverCard>
         </div>
       </div>
+      
+      <ContactDialog 
+        open={isContactDialogOpen} 
+        onOpenChange={setIsContactDialogOpen} 
+      />
     </header>
   );
 };
