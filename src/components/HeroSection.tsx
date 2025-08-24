@@ -11,7 +11,7 @@ const HeroSection = () => {
       <div className="container mx-auto">
         <div className="max-w-2xl animate-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold text-zenlore-navy mb-6 leading-tight">
-            Wisdom Meets<br />
+            Wisdom Multiplies<br />
             Innovation
           </h1>
           
