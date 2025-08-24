@@ -1,4 +1,4 @@
-import { Brain, Lightbulb, Users } from "lucide-react";
+import { Brain, Lightbulb, Users, Server, Shield, Coins } from "lucide-react";
 
 const ExpertiseSection = () => {
   const services = [
@@ -16,6 +16,21 @@ const ExpertiseSection = () => {
       icon: Users,
       title: "Tech Strategy & Mentoring",
       description: "Guidance for teams seeking harmony between rapid growth and thoughtful implementation"
+    },
+    {
+      icon: Server,
+      title: "DevOps",
+      description: "Streamlined deployment pipelines and infrastructure automation for scalable systems"
+    },
+    {
+      icon: Shield,
+      title: "Cybersecurity",
+      description: "Comprehensive security assessment and protection strategies for digital assets"
+    },
+    {
+      icon: Coins,
+      title: "Blockchain/Web3",
+      description: "Decentralized technology integration and smart contract development solutions"
     }
   ];
 
