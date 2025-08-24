@@ -59,7 +59,7 @@ const Header = () => {
           variant="outline" 
           size="lg"
           onClick={() => scrollToSection('hero')}
-          className="bg-zenlore-gold border-zenlore-gold text-zenlore-navy hover:bg-zenlore-navy hover:text-zenlore-gold"
+          className="bg-zenlore-navy border-zenlore-gold text-zenlore-gold hover:bg-zenlore-gold hover:text-zenlore-navy"
         >
           START THE JOURNEY
         </Button>
