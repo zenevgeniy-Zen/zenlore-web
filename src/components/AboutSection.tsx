@@ -8,11 +8,19 @@ const AboutSection = () => {
               ABOUT
             </h2>
             
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-6">
+              At Zenlore, we are a multidisciplinary team of over 20 professionals with deep-rooted expertise in technology, strategy, and innovation.
+              Our consultants and engineers have led successful projects for startups, scaleups, and enterprises across the USA, UK, Austria, Israel, and Ukraine.
+            </p>
+            
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-6">
+              We bring together diverse cultural and technical perspectives to solve complex challenges with clarity and precision.
+              Each member of our team is carefully selected not only for their qualifications, but also for their ability to think critically, act ethically, and deliver with impact.
+            </p>
+            
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              We are a team of more than 20 Zenlore vision enthusiasts who work on many multinational projects around the world. 
-              Our global presence spans across the USA, Britain, Austria, Israel, and Ukraine, bringing diverse perspectives and 
-              expertise to every challenge we tackle. This international foundation allows us to understand and serve clients 
-              across different cultures, markets, and technological landscapes with unparalleled insight and dedication.
+              Our global reach enables us to support organizations with tailored solutions across industries, adapting quickly to market dynamics and emerging trends.
+              Clients choose Zenlore for our strategic insight, engineering rigor, and unwavering commitment to meaningful progress.
             </p>
           </div>
         </div>
