@@ -65,7 +65,7 @@ const InsightsSection = () => {
         </div>
 
         {/* Cases - One under another */}
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div className="max-w-4xl mx-auto space-y-8 text-center">
           {cases.map((caseItem, index) => {
             const isSelected = selectedCase === index;
             const isBlurred = selectedCase !== null && selectedCase !== index;
@@ -75,12 +75,12 @@ const InsightsSection = () => {
                 {/* Case Title */}
                 <div
                   className={`
-                    cursor-pointer transition-all duration-500 group text-left
+                    cursor-pointer transition-all duration-500 group text-center
                     ${isBlurred ? 'blur-sm opacity-60 scale-95' : 'blur-none opacity-100 scale-100'}
                   `}
                   onClick={() => setSelectedCase(selectedCase === index ? null : index)}
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center justify-center gap-4">
                     <caseItem.icon 
                       className={`
                         w-8 h-8 md:w-10 md:h-10 transition-colors duration-300
@@ -91,10 +91,10 @@ const InsightsSection = () => {
                       `}
                     />
                     <h3 className={`
-                      text-xl md:text-2xl font-medium transition-colors duration-300
+                      text-2xl md:text-3xl font-light italic leading-relaxed transition-colors duration-300
                       ${isSelected 
                         ? 'text-zenlore-gold' 
-                        : 'text-zenlore-navy/70 group-hover:text-zenlore-gold'
+                        : 'text-zenlore-navy group-hover:text-zenlore-gold'
                       }
                     `}>
                       {caseItem.title}
