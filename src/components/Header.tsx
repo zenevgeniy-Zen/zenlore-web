@@ -56,11 +56,10 @@ const Header = () => {
         
         {/* CTA Button */}
         <Button 
-          variant="outline" 
+          variant="hero" 
           size="lg"
           onClick={() => scrollToSection('hero')}
-          className="border-zenlore-gold text-zenlore-gold hover:bg-zenlore-gold hover:text-zenlore-navy"
-          style={{ backgroundColor: '#0B0C0D' }}
+          className="px-8 py-3"
         >
           START THE JOURNEY
         </Button>
