@@ -60,7 +60,7 @@ const Header = () => {
           variant="outline" 
           size="lg"
           onClick={() => scrollToSection('hero')}
-          className="border-zenlore-gold text-zenlore-gold hover:bg-zenlore-gold px-8 py-3 transform hover:scale-105 transition-all duration-300"
+          className="border-zenlore-gold text-zenlore-gold px-8 py-3 transform hover:scale-105 transition-all duration-300"
           style={{ backgroundColor: '#0B0C0D' }}
         >
           START THE JOURNEY
