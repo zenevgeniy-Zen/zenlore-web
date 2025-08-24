@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Brain, Shield, Globe } from "lucide-react";
+import { useScrollGlow } from "@/hooks/useScrollGlow";
 
 const InsightsSection = () => {
   const [selectedCase, setSelectedCase] = useState<number | null>(null);
+  
+  // Create refs for each case
+  const caseRefs = useRef(Array.from({ length: 3 }, () => useRef<HTMLDivElement>(null)));
+  const glowingElements = useScrollGlow(caseRefs.current);
 
   const cases = [
     {
@@ -84,9 +89,11 @@ const InsightsSection = () => {
               <div key={index} className="space-y-4">
                 {/* Case Title */}
                 <div
+                  ref={caseRefs.current[index]}
                   className={`
                     cursor-pointer transition-all duration-500 group text-center
                     ${isBlurred ? 'blur-sm opacity-60 scale-95' : 'blur-none opacity-100 scale-100 active:scale-105'}
+                    ${glowingElements.has(index) ? 'shadow-[0_0_30px_rgba(212,175,55,0.6)] scale-105' : ''}
                   `}
                   onClick={() => setSelectedCase(selectedCase === index ? null : index)}
                 >
