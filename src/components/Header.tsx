@@ -1,5 +1,7 @@
 
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 const Header = () => {
   const scrollToSection = (sectionId: string) => {
@@ -55,18 +57,75 @@ const Header = () => {
           </button>
         </nav>
         
-        {/* CTA Button */}
-        <div className="flex-shrink-0">
+        {/* Desktop CTA Button */}
+        <div className="hidden md:flex flex-shrink-0">
           <Button 
             variant="outline" 
             size="lg"
             onClick={() => scrollToSection('hero')}
-            className="border-zenlore-gold text-zenlore-gold hover:!bg-transparent hover:!text-zenlore-gold px-4 md:px-6 lg:px-8 py-2 md:py-3 text-xs md:text-sm transform hover:scale-105 transition-all duration-300"
+            className="border-zenlore-gold text-zenlore-gold hover:!bg-transparent hover:!text-zenlore-gold px-6 lg:px-8 py-3 text-sm transform hover:scale-105 transition-all duration-300"
             style={{ backgroundColor: '#0B0C0D' }}
           >
-            <span className="hidden sm:inline">START THE JOURNEY</span>
-            <span className="sm:hidden">START</span>
+            START THE JOURNEY
           </Button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="text-white hover:text-zenlore-gold">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="bg-zenlore-navy border-l-zenlore-gold w-[300px] sm:w-[350px]">
+              <nav className="flex flex-col space-y-6 mt-8">
+                <button 
+                  onClick={() => scrollToSection('home')}
+                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left text-lg py-2"
+                >
+                  Home
+                </button>
+                <button 
+                  onClick={() => scrollToSection('expertise')}
+                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left text-lg py-2"
+                >
+                  Expertise
+                </button>
+                <button 
+                  onClick={() => scrollToSection('insights')}
+                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left text-lg py-2"
+                >
+                  Insights
+                </button>
+                <button 
+                  onClick={() => scrollToSection('about')}
+                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left text-lg py-2"
+                >
+                  About
+                </button>
+                <button 
+                  onClick={() => scrollToSection('contact')}
+                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left text-lg py-2"
+                >
+                  Contact
+                </button>
+                
+                {/* Mobile CTA Button */}
+                <div className="pt-6">
+                  <Button 
+                    variant="outline" 
+                    size="lg"
+                    onClick={() => scrollToSection('hero')}
+                    className="border-zenlore-gold text-zenlore-gold hover:!bg-transparent hover:!text-zenlore-gold w-full py-3 text-sm transform hover:scale-105 transition-all duration-300"
+                    style={{ backgroundColor: '#0B0C0D' }}
+                  >
+                    START THE JOURNEY
+                  </Button>
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>
