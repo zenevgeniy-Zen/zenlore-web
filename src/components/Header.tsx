@@ -60,6 +60,7 @@ const Header = () => {
           size="lg"
           onClick={() => scrollToSection('hero')}
           className="px-8 py-3"
+          style={{ backgroundColor: '#0B0C0D' }}
         >
           START THE JOURNEY
         </Button>
