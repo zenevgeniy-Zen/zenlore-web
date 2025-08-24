@@ -10,7 +10,7 @@ const MissionSection = () => {
             
             
             <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Zenlore is a platform that merges knowledge, technology, and balance. It is designed for teams that seek more than just automation.
+              Zenlore represents a unique vision where knowledge, technology, and balance converge. It is designed for teams inspired by the power of chaos, who seek growth within the beauty of stability and harmony.
             </p>
           </div>
         </div>
