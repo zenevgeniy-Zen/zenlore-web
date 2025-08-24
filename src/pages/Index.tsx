@@ -4,11 +4,13 @@ import MissionSection from "@/components/MissionSection";
 import ExpertiseSection from "@/components/ExpertiseSection";
 import PhilosophySection from "@/components/PhilosophySection";
 import Footer from "@/components/Footer";
+import FloatingLogo from "@/components/FloatingLogo";
 
 const Index = () => {
   return (
     <div>
       <Header />
+      <FloatingLogo />
       <main>
         <HeroSection />
         <MissionSection />
