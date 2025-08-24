@@ -1,8 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import { Menu } from "lucide-react";
 
 const Header = () => {
   const scrollToSection = (sectionId: string) => {
@@ -12,20 +10,7 @@ const Header = () => {
 
   return (
     <header className="bg-zenlore-navy py-2 md:py-4 px-4 md:px-6">
-      <div className="container mx-auto flex items-center justify-center relative">
-        {/* START THE JOURNEY кнопка ліворуч на десктопі */}
-        <div className="hidden md:flex absolute left-0">
-          <Button 
-            variant="outline" 
-            size="lg"
-            onClick={() => scrollToSection('hero')}
-            className="border-zenlore-gold text-zenlore-gold hover:!bg-transparent hover:!text-zenlore-gold px-6 lg:px-8 py-3 text-sm transform hover:scale-105 transition-all duration-300"
-            style={{ backgroundColor: '#0B0C0D' }}
-          >
-            START THE JOURNEY
-          </Button>
-        </div>
-
+      <div className="container mx-auto flex items-center justify-center">
         {/* Logo з dropdown по центру */}
         <HoverCard openDelay={200} closeDelay={300}>
           <HoverCardTrigger asChild>
@@ -40,7 +25,7 @@ const Header = () => {
             </div>
           </HoverCardTrigger>
           <HoverCardContent 
-            className="w-48 bg-zenlore-navy border-zenlore-gold p-4 mt-2"
+            className="w-56 bg-zenlore-navy border-zenlore-gold p-4 mt-2"
             side="bottom"
           >
             <nav className="flex flex-col space-y-3">
@@ -74,67 +59,22 @@ const Header = () => {
               >
                 Contact
               </button>
+              
+              {/* START THE JOURNEY кнопка в dropdown */}
+              <div className="pt-3 border-t border-zenlore-gold/30">
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  onClick={() => scrollToSection('hero')}
+                  className="border-zenlore-gold text-zenlore-gold hover:!bg-transparent hover:!text-zenlore-gold w-full py-3 text-sm transform hover:scale-105 transition-all duration-300"
+                  style={{ backgroundColor: '#0B0C0D' }}
+                >
+                  START THE JOURNEY
+                </Button>
+              </div>
             </nav>
           </HoverCardContent>
         </HoverCard>
-
-        {/* Mobile Menu праворуч */}
-        <div className="md:hidden absolute right-0">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-white hover:text-zenlore-gold">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="bg-zenlore-navy border-l-zenlore-gold w-[300px] sm:w-[350px]">
-              <nav className="flex flex-col space-y-6 mt-8">
-                <button 
-                  onClick={() => scrollToSection('home')}
-                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left text-lg py-2"
-                >
-                  Home
-                </button>
-                <button 
-                  onClick={() => scrollToSection('expertise')}
-                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left text-lg py-2"
-                >
-                  Expertise
-                </button>
-                <button 
-                  onClick={() => scrollToSection('insights')}
-                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left text-lg py-2"
-                >
-                  Insights
-                </button>
-                <button 
-                  onClick={() => scrollToSection('about')}
-                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left text-lg py-2"
-                >
-                  About
-                </button>
-                <button 
-                  onClick={() => scrollToSection('contact')}
-                  className="text-white hover:text-zenlore-gold transition-colors duration-300 text-left text-lg py-2"
-                >
-                  Contact
-                </button>
-                
-                {/* Mobile CTA Button */}
-                <div className="pt-6">
-                  <Button 
-                    variant="outline" 
-                    size="lg"
-                    onClick={() => scrollToSection('hero')}
-                    className="border-zenlore-gold text-zenlore-gold hover:!bg-transparent hover:!text-zenlore-gold w-full py-3 text-sm transform hover:scale-105 transition-all duration-300"
-                    style={{ backgroundColor: '#0B0C0D' }}
-                  >
-                    START THE JOURNEY
-                  </Button>
-                </div>
-              </nav>
-            </SheetContent>
-          </Sheet>
-        </div>
       </div>
     </header>
   );
