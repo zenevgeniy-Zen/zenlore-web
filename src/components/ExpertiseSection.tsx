@@ -1,36 +1,45 @@
 import { Brain, Lightbulb, Users, Server, Shield, Coins } from "lucide-react";
+import { useState } from "react";
 
 const ExpertiseSection = () => {
+  const [selectedService, setSelectedService] = useState<number | null>(null);
+
   const services = [
     {
       icon: Brain,
       title: "Research and Development",
-      description: "Deep analysis and strategic innovation development with focus on sustainable solutions"
+      shortDescription: "Deep analysis and strategic innovation development with focus on sustainable solutions",
+      fullDescription: "We specialize in turning bold ideas into tangible innovations. Our R&D team combines scientific rigor with technical excellence to create future-ready solutions."
     },
     {
       icon: Lightbulb,
       title: "AI Consulting",
-      description: "Intelligent integration of AI technologies balanced with human-centered approaches"
+      shortDescription: "Intelligent integration of AI technologies balanced with human-centered approaches",
+      fullDescription: "Our experts bring years of experience in applying machine learning and data science to real-world problems. From AI strategy to full-scale implementation — we help you harness AI wisely and responsibly."
     },
     {
       icon: Users,
       title: "Tech Strategy & Mentoring",
-      description: "Guidance for teams seeking harmony between rapid growth and thoughtful implementation"
+      shortDescription: "Guidance for teams seeking harmony between rapid growth and thoughtful implementation",
+      fullDescription: "We guide organizations through complex technological decisions with clarity and confidence. Our senior consultants mentor teams and shape tech roadmaps aligned with your vision and growth."
     },
     {
       icon: Server,
       title: "DevOps",
-      description: "Streamlined deployment pipelines and infrastructure automation for scalable systems"
+      shortDescription: "Streamlined deployment pipelines and infrastructure automation for scalable systems",
+      fullDescription: "Seamless integration, automation, and delivery — that's our DevOps DNA. We've helped scale engineering teams and CI/CD pipelines for fast-moving startups and enterprise systems alike."
     },
     {
       icon: Shield,
       title: "Cybersecurity",
-      description: "Comprehensive security assessment and protection strategies for digital assets"
+      shortDescription: "Comprehensive security assessment and protection strategies for digital assets",
+      fullDescription: "Our security experts are trusted by fintechs, startups, and critical infrastructure clients. We deliver secure-by-design architecture, threat modeling, and incident response expertise."
     },
     {
       icon: Coins,
       title: "Blockchain/Web3",
-      description: "Decentralized technology integration and smart contract development solutions"
+      shortDescription: "Decentralized technology integration and smart contract development solutions",
+      fullDescription: "From tokenomics to smart contract audits, we bring proven experience in decentralized systems. We work with blockchain protocols, dApps, and Web3 infrastructure at production scale."
     }
   ];
 
@@ -48,19 +57,43 @@ const ExpertiseSection = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="animate-slide-up"
+              className={`animate-slide-up cursor-pointer transition-all duration-500 ${
+                selectedService !== null && selectedService !== index 
+                  ? 'opacity-30 scale-95' 
+                  : 'opacity-100 scale-100 hover:scale-105'
+              }`}
               style={{ animationDelay: `${index * 0.2}s` }}
+              onClick={() => setSelectedService(selectedService === index ? null : index)}
             >
-              <div className="w-16 h-16 mx-auto mb-4">
-                <service.icon className="w-full h-full text-zenlore-navy" />
+              <div className={`w-16 h-16 mx-auto mb-4 transition-all duration-300 ${
+                selectedService === index ? 'transform scale-110' : ''
+              }`}>
+                <service.icon className={`w-full h-full transition-colors duration-300 ${
+                  selectedService === index ? 'text-zenlore-gold' : 'text-zenlore-navy'
+                }`} />
               </div>
               
-              <h3 className="text-lg font-semibold text-zenlore-navy mb-3">
+              <h3 className={`text-lg font-semibold mb-3 transition-colors duration-300 ${
+                selectedService === index ? 'text-zenlore-gold' : 'text-zenlore-navy'
+              }`}>
                 {service.title}
               </h3>
             </div>
           ))}
         </div>
+
+        {selectedService !== null && (
+          <div className="mt-12 max-w-3xl mx-auto text-center animate-fade-in">
+            <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-8 border border-zenlore-gold/20">
+              <h4 className="text-xl font-semibold text-zenlore-navy mb-4">
+                {services[selectedService].title}
+              </h4>
+              <p className="text-zenlore-navy/80 leading-relaxed">
+                {services[selectedService].fullDescription}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
