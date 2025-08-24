@@ -55,43 +55,56 @@ const ExpertiseSection = () => {
         
         <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto text-center">
           {services.slice(0, 3).map((service, index) => (
-            <div 
-              key={index}
-              className={`animate-slide-up cursor-pointer transition-all duration-500 group ${
-                selectedService !== null && selectedService !== index 
-                  ? 'blur-sm opacity-60 scale-95' 
-                  : 'blur-none opacity-100 scale-100 hover:scale-105'
-              }`}
-              style={{ animationDelay: `${index * 0.2}s` }}
-              onClick={() => setSelectedService(selectedService === index ? null : index)}
-            >
-              <div className={`w-16 h-16 mx-auto mb-4 transition-all duration-300 ${
-                selectedService === index ? 'transform scale-110' : ''
-              }`}>
-                <service.icon className={`w-full h-full transition-colors duration-300 ${
+            <div key={index}>
+              <div 
+                className={`animate-slide-up cursor-pointer transition-all duration-500 group ${
+                  selectedService !== null && selectedService !== index 
+                    ? 'blur-sm opacity-60 scale-95' 
+                    : 'blur-none opacity-100 scale-100 hover:scale-105'
+                }`}
+                style={{ animationDelay: `${index * 0.2}s` }}
+                onClick={() => setSelectedService(selectedService === index ? null : index)}
+              >
+                <div className={`w-16 h-16 mx-auto mb-4 transition-all duration-300 ${
+                  selectedService === index ? 'transform scale-110' : ''
+                }`}>
+                  <service.icon className={`w-full h-full transition-colors duration-300 ${
+                    selectedService === index 
+                      ? 'text-zenlore-gold' 
+                      : selectedService !== null && selectedService !== index
+                      ? 'text-zenlore-navy'
+                      : 'text-zenlore-navy group-hover:text-zenlore-gold'
+                  }`} />
+                </div>
+                
+                <h3 className={`text-lg font-semibold mb-3 transition-colors duration-300 ${
                   selectedService === index 
                     ? 'text-zenlore-gold' 
                     : selectedService !== null && selectedService !== index
                     ? 'text-zenlore-navy'
                     : 'text-zenlore-navy group-hover:text-zenlore-gold'
-                }`} />
+                }`}>
+                  {service.title}
+                </h3>
               </div>
               
-              <h3 className={`text-lg font-semibold mb-3 transition-colors duration-300 ${
-                selectedService === index 
-                  ? 'text-zenlore-gold' 
-                  : selectedService !== null && selectedService !== index
-                  ? 'text-zenlore-navy'
-                  : 'text-zenlore-navy group-hover:text-zenlore-gold'
-              }`}>
-                {service.title}
-              </h3>
+              {/* Mobile description - shows under each icon */}
+              {selectedService === index && (
+                <div className="mt-6 md:hidden animate-fade-in">
+                  <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-6 border border-zenlore-gold/20">
+                    <p className="text-zenlore-navy/80 leading-relaxed text-sm">
+                      {services[selectedService].fullDescription}
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
 
+        {/* Desktop description - shows under the row */}
         {selectedService !== null && selectedService < 3 && (
-          <div className="mt-12 max-w-3xl mx-auto text-center animate-fade-in">
+          <div className="mt-12 max-w-3xl mx-auto text-center animate-fade-in hidden md:block">
             <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-8 border border-zenlore-gold/20">
               <h4 className="text-xl font-semibold text-zenlore-navy mb-4">
                 {services[selectedService].title}
@@ -107,44 +120,57 @@ const ExpertiseSection = () => {
           {services.slice(3, 6).map((service, index) => {
             const actualIndex = index + 3;
             return (
-              <div 
-                key={actualIndex}
-                className={`animate-slide-up cursor-pointer transition-all duration-500 group ${
-                  selectedService !== null && selectedService !== actualIndex 
-                    ? 'blur-sm opacity-60 scale-95' 
-                    : 'blur-none opacity-100 scale-100 hover:scale-105'
-                }`}
-                style={{ animationDelay: `${actualIndex * 0.2}s` }}
-                onClick={() => setSelectedService(selectedService === actualIndex ? null : actualIndex)}
-              >
-                <div className={`w-16 h-16 mx-auto mb-4 transition-all duration-300 ${
-                  selectedService === actualIndex ? 'transform scale-110' : ''
-                }`}>
-                  <service.icon className={`w-full h-full transition-colors duration-300 ${
+              <div key={actualIndex}>
+                <div 
+                  className={`animate-slide-up cursor-pointer transition-all duration-500 group ${
+                    selectedService !== null && selectedService !== actualIndex 
+                      ? 'blur-sm opacity-60 scale-95' 
+                      : 'blur-none opacity-100 scale-100 hover:scale-105'
+                  }`}
+                  style={{ animationDelay: `${actualIndex * 0.2}s` }}
+                  onClick={() => setSelectedService(selectedService === actualIndex ? null : actualIndex)}
+                >
+                  <div className={`w-16 h-16 mx-auto mb-4 transition-all duration-300 ${
+                    selectedService === actualIndex ? 'transform scale-110' : ''
+                  }`}>
+                    <service.icon className={`w-full h-full transition-colors duration-300 ${
+                      selectedService === actualIndex 
+                        ? 'text-zenlore-gold' 
+                        : selectedService !== null && selectedService !== actualIndex
+                        ? 'text-zenlore-navy'
+                        : 'text-zenlore-navy group-hover:text-zenlore-gold'
+                    }`} />
+                  </div>
+                  
+                  <h3 className={`text-lg font-semibold mb-3 transition-colors duration-300 ${
                     selectedService === actualIndex 
                       ? 'text-zenlore-gold' 
                       : selectedService !== null && selectedService !== actualIndex
                       ? 'text-zenlore-navy'
                       : 'text-zenlore-navy group-hover:text-zenlore-gold'
-                  }`} />
+                  }`}>
+                    {service.title}
+                  </h3>
                 </div>
                 
-                <h3 className={`text-lg font-semibold mb-3 transition-colors duration-300 ${
-                  selectedService === actualIndex 
-                    ? 'text-zenlore-gold' 
-                    : selectedService !== null && selectedService !== actualIndex
-                    ? 'text-zenlore-navy'
-                    : 'text-zenlore-navy group-hover:text-zenlore-gold'
-                }`}>
-                  {service.title}
-                </h3>
+                {/* Mobile description - shows under each icon */}
+                {selectedService === actualIndex && (
+                  <div className="mt-6 md:hidden animate-fade-in">
+                    <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-6 border border-zenlore-gold/20">
+                      <p className="text-zenlore-navy/80 leading-relaxed text-sm">
+                        {services[selectedService].fullDescription}
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             );
           })}
         </div>
 
+        {/* Desktop description - shows under the row */}
         {selectedService !== null && selectedService >= 3 && (
-          <div className="mt-12 max-w-3xl mx-auto text-center animate-fade-in">
+          <div className="mt-12 max-w-3xl mx-auto text-center animate-fade-in hidden md:block">
             <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-8 border border-zenlore-gold/20">
               <h4 className="text-xl font-semibold text-zenlore-navy mb-4">
                 {services[selectedService].title}
