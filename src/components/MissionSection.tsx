@@ -10,7 +10,7 @@ const MissionSection = () => {
             
             
             <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Zenlore represents a unique vision where knowledge, technology, and balance converge. It is designed for teams inspired by the power of chaos, who seek growth within the beauty of stability and harmony.
+              Zenlore represents a unique vision where knowledge, technology, and balance converge. It is designed for teams inspired by the power of chaos, who seek growth within the beauty of stability and equilibrium.
             </p>
           </div>
         </div>
