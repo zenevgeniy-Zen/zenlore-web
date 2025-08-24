@@ -11,8 +11,8 @@ const Header = () => {
   return (
     <header className="bg-zenlore-navy py-2 md:py-4 px-4 md:px-6">
       <div className="container mx-auto flex items-center justify-between">
-        {/* Desktop Layout (lg and up only) */}
-        <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+        {/* Desktop Layout */}
+        <div className="hidden md:flex items-center gap-3 flex-shrink-0">
           <div className="w-[103px] h-[103px] rounded-full flex items-center justify-center overflow-hidden shadow-[0_8px_32px_-4px_rgba(0,0,0,0.3),0_4px_16px_-2px_rgba(0,0,0,0.2)] border-2 transition-all duration-300 hover:shadow-[0_12px_40px_-4px_rgba(0,0,0,0.4),0_6px_20px_-2px_rgba(0,0,0,0.3)] hover:scale-105" style={{ backgroundColor: '#0B0C0D', borderColor: '#0B0C0D' }}>
             <img 
               src="/lovable-uploads/a996b871-738a-4698-ab48-a48cd59045bf.png" 
@@ -22,8 +22,8 @@ const Header = () => {
           </div>
         </div>
         
-        {/* Desktop Navigation (lg and up only) */}
-        <nav className="hidden lg:flex items-center space-x-8">
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-8">
           <button 
             onClick={() => scrollToSection('home')}
             className="text-white hover:text-zenlore-gold transition-colors duration-300"
@@ -56,8 +56,8 @@ const Header = () => {
           </button>
         </nav>
         
-        {/* Desktop CTA Button (lg and up only) */}
-        <div className="hidden lg:flex flex-shrink-0">
+        {/* Desktop CTA Button */}
+        <div className="hidden md:flex flex-shrink-0">
           <Button 
             variant="outline" 
             size="lg"
@@ -69,8 +69,8 @@ const Header = () => {
           </Button>
         </div>
 
-        {/* Mobile and Tablet Logo з dropdown */}
-        <div className="lg:hidden flex items-center justify-center w-full">
+        {/* Mobile Logo з dropdown */}
+        <div className="md:hidden flex items-center justify-center w-full">
           <HoverCard openDelay={200} closeDelay={300}>
             <HoverCardTrigger asChild>
               <div className="flex items-center gap-3 flex-shrink-0 cursor-pointer">
