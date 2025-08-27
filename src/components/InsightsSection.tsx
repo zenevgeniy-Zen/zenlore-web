@@ -44,18 +44,18 @@ const InsightsSection = () => {
     },
     {
       icon: Globe,
-      title: "Scaling Web3 Infrastructure for NFT Platform", 
-      shortDesc: "NFT infrastructure startup targeting creators and brands",
+      title: "Building DEX Aggregator Platform", 
+      shortDesc: "DeFi startup creating multi-chain DEX aggregation solution",
       fullDesc: {
-        client: "NFT infrastructure startup targeting creators and brands",
-        challenge: "Platform instability under traffic spikes and expensive gas fees for users.",
-        solution: "Zenlore implemented a multi-chain smart contract strategy with Layer-2 integration. Optimized DevOps pipelines enabled auto-scaling infrastructure, real-time gas optimization, and advanced monitoring.",
+        client: "DeFi startup creating multi-chain DEX aggregation solution",
+        challenge: "Users were losing money on inefficient trades across fragmented DEX landscape with high slippage and poor price discovery.",
+        solution: "Zenlore built a sophisticated DEX aggregator that routes trades across multiple protocols to find optimal pricing. The platform integrates with 15+ DEXs, implements advanced routing algorithms, and provides real-time price comparison with MEV protection.",
         results: [
-          "3x improvement in transaction throughput",
-          "Reduced gas fees by ~30%",
-          "Downtime dropped to <0.5% over 6 months"
+          "Reduced trading slippage by 40% on average",
+          "Integrated 15+ major DEXs across 5 blockchains",
+          "Processed $50M+ in trading volume within first 6 months"
         ],
-        impact: "Tech strategy directly impacted user experience and long-term platform reputation."
+        impact: "Smart routing technology transformed how users interact with DeFi, making decentralized trading more efficient and accessible."
       }
     }
   ];
