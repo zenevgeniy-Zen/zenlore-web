@@ -53,7 +53,7 @@ const InsightsSection = () => {
         results: [
           "Reduced trading slippage by 40% on average",
           "Integrated 15+ major DEXs across 5 blockchains",
-          "Processed $50M+ in trading volume within first 6 months"
+          "Achieved 99.8% uptime with 10,000+ successful trades processed"
         ],
         impact: "Smart routing technology transformed how users interact with DeFi, making decentralized trading more efficient and accessible."
       }
