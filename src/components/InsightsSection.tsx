@@ -74,7 +74,7 @@ const InsightsSection = () => {
               Our work spans across industries and technologies, guided by a philosophy of balanced innovation and deep understanding.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Below are a few selected case studies that demonstrate how we help our clients turn complexity into clarity, and vision into reality.
+              Below are a few recent case studies that demonstrate how we help our clients turn complexity into clarity, and vision into reality.
             </p>
           </div>
         </div>
