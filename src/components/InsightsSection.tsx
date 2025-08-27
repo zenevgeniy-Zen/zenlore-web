@@ -33,7 +33,7 @@ const InsightsSection = () => {
       fullDesc: {
         client: "EU-based Fintech startup preparing for PSD2 compliance",
         challenge: "Scaling the platform while maintaining airtight security and auditability.",
-        solution: "Zenlore's team designed a modular, zero-trust cybersecurity architecture with token-based authentication, anomaly detection, and automated risk audits. The solution was compliant with EU regulations and built to scale.",
+        solution: "Zenlore's team designed a modular cybersecurity architecture with token-based authentication, anomaly detection, and automated risk audits. The solution was compliant with EU regulations and built to scale.",
         results: [
           "Passed 3rd-party security audit with zero critical issues",
           "Reduced attack surface by 45%",
