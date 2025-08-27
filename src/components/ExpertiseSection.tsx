@@ -1,4 +1,4 @@
-import { Brain, Lightbulb, Users, Server, Shield, Coins } from "lucide-react";
+import { Brain, Lightbulb, Code, Server, Shield, Coins } from "lucide-react";
 import { useState, useRef } from "react";
 import { useScrollGlow } from "@/hooks/useScrollGlow";
 
@@ -23,10 +23,10 @@ const ExpertiseSection = () => {
       fullDescription: "Our experts bring years of experience in applying machine learning and data science to real-world problems. From AI strategy to full-scale implementation — we help you harness AI wisely and responsibly."
     },
     {
-      icon: Users,
-      title: "Tech Strategy & Mentoring",
-      shortDescription: "Guidance for teams seeking harmony between rapid growth and thoughtful implementation",
-      fullDescription: "We guide organizations through complex technological decisions with clarity and confidence. Our senior consultants mentor teams and shape tech roadmaps aligned with your vision and growth."
+      icon: Code,
+      title: "Modern Web App Development",
+      shortDescription: "Full-stack development of responsive, scalable web applications using cutting-edge technologies",
+      fullDescription: "We build modern web applications using React, TypeScript, Node.js, and cloud-native architectures. From MVPs to enterprise-scale platforms, we deliver performant, maintainable solutions that grow with your business."
     },
     {
       icon: Server,
