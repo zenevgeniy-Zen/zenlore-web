@@ -24,7 +24,7 @@ const Header = () => {
         <div className="hidden md:flex items-center gap-3 flex-shrink-0">
           <div className="w-[124px] h-[124px] rounded-full flex items-center justify-center overflow-hidden border-2 transition-all duration-300 hover:scale-105" style={{ backgroundColor: '#0B0C0D', borderColor: '#0B0C0D' }}>
             <img 
-              src="/lovable-uploads/a996b871-738a-4698-ab48-a48cd59045bf.png" 
+              src="./lovable-uploads/a996b871-738a-4698-ab48-a48cd59045bf.png" 
               alt="Zenlore Logo" 
               className="w-full h-full object-cover scale-110 transition-transform duration-300 hover:scale-115"
             />
@@ -132,7 +132,7 @@ const Header = () => {
           <div className="flex items-center justify-center flex-1">
             <div className="w-[115px] h-[115px] rounded-full flex items-center justify-center overflow-hidden border-2 transition-all duration-300" style={{ backgroundColor: '#0B0C0D', borderColor: '#0B0C0D' }}>
               <img 
-                src="/lovable-uploads/a996b871-738a-4698-ab48-a48cd59045bf.png" 
+                src="./lovable-uploads/a996b871-738a-4698-ab48-a48cd59045bf.png" 
                 alt="Zenlore Logo" 
                 className="w-full h-full object-cover scale-110"
               />

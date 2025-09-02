@@ -36,7 +36,7 @@ const FloatingLogo = () => {
         aria-label="Scroll to top"
       >
         <img 
-          src="/lovable-uploads/a996b871-738a-4698-ab48-a48cd59045bf.png" 
+          src="./lovable-uploads/a996b871-738a-4698-ab48-a48cd59045bf.png" 
           alt="Zenlore Logo" 
           className="w-full h-full object-cover rounded-full scale-110 transition-transform duration-300 group-hover:scale-125"
         />
