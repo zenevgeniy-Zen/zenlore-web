@@ -35,14 +35,14 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
     try {
       // Send email using EmailJS
       await emailjs.send(
-        'service_zenlore', // Service ID (you'll need to create this in EmailJS)
-        'template_contact', // Template ID (you'll need to create this in EmailJS)
+        'service_zm4pdvq',
+        'template_twquyz8',
         {
           from_email: email,
           message: message,
           to_email: 'zen@zenlore.tech',
         },
-        'YOUR_PUBLIC_KEY' // Public key from EmailJS (you'll need to add this)
+        '-aZCtDhR30uVF_G-d'
       );
       
       toast({
