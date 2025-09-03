@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 interface ContactDialogProps {
   open: boolean;
@@ -32,8 +33,17 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call - replace with actual email service
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_zenlore', // Service ID (you'll need to create this in EmailJS)
+        'template_contact', // Template ID (you'll need to create this in EmailJS)
+        {
+          from_email: email,
+          message: message,
+          to_email: 'zen@zenlore.tech',
+        },
+        'YOUR_PUBLIC_KEY' // Public key from EmailJS (you'll need to add this)
+      );
       
       toast({
         title: "Message sent!",
@@ -44,6 +54,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
       setMessage("");
       onOpenChange(false);
     } catch (error) {
+      console.error('EmailJS error:', error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
