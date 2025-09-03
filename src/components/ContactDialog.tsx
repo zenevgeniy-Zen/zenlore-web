@@ -45,7 +45,7 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
       // Send email using EmailJS
       await emailjs.send(
         'service_zm4pdvq',
-        'template_twquyz8',
+        'template_i3yua8s',
         {
           from_email: email,
           user_email: email,
