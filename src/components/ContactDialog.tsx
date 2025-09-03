@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -17,6 +17,15 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  // Initialize EmailJS once
+  useEffect(() => {
+    try {
+      emailjs.init({ publicKey: '-aZCtDhR30uVF_G-d' });
+    } catch (e) {
+      console.error('EmailJS init error:', e);
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,7 +48,9 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
         'template_twquyz8',
         {
           from_email: email,
-          message: message,
+          user_email: email,
+          reply_to: email,
+          message,
           to_email: 'zen@zenlore.tech',
         },
         '-aZCtDhR30uVF_G-d'
@@ -55,9 +66,10 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
       onOpenChange(false);
     } catch (error) {
       console.error('EmailJS error:', error);
+      const errText = (error as any)?.text || (error as any)?.message || "Failed to send message. Please try again.";
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again.",
+        description: errText,
         variant: "destructive",
       });
     } finally {
