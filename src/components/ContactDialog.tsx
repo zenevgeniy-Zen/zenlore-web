@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 interface ContactDialogProps {
   open: boolean;
@@ -16,6 +17,15 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
   const [message, setMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  // Initialize EmailJS once
+  useEffect(() => {
+    try {
+      emailjs.init({ publicKey: '-aZCtDhR30uVF_G-d' });
+    } catch (e) {
+      console.error('EmailJS init error:', e);
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,8 +42,19 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call - replace with actual email service
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_zm4pdvq',
+        'template_i3yua8s',
+        {
+          from_email: email,
+          user_email: email,
+          reply_to: email,
+          message,
+          to_email: 'zen@zenlore.tech',
+        },
+        '-aZCtDhR30uVF_G-d'
+      );
       
       toast({
         title: "Message sent!",
@@ -44,9 +65,11 @@ const ContactDialog = ({ open, onOpenChange }: ContactDialogProps) => {
       setMessage("");
       onOpenChange(false);
     } catch (error) {
+      console.error('EmailJS error:', error);
+      const errText = (error as any)?.text || (error as any)?.message || "Failed to send message. Please try again.";
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again.",
+        description: errText,
         variant: "destructive",
       });
     } finally {
