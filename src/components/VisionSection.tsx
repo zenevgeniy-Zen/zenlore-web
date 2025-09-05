@@ -44,11 +44,15 @@ const VisionSection = () => {
               {founders.map((founder) => (
                 <div key={founder.id} className="flex flex-col items-center">
                   {/* Founder Photo - прямоугольное и большое */}
-                  <div className="w-64 h-80 mb-6 overflow-hidden rounded-lg bg-zenlore-gray/20">
+                  <div className="w-64 h-80 mb-6 overflow-hidden rounded-lg bg-zenlore-gray/20 border border-zenlore-gold/20">
                     <img 
                       src={founder.image} 
                       alt={founder.name}
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        console.log(`Failed to load image for ${founder.name}:`, founder.image);
+                        e.currentTarget.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='320' viewBox='0 0 256 320'%3E%3Crect width='256' height='320' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='16' fill='%236b7280'%3E${founder.name}%3C/text%3E%3C/svg%3E";
+                      }}
                     />
                   </div>
                   
