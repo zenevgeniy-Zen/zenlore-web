@@ -29,6 +29,7 @@ const VisionSection = () => {
   return (
     <div>
       <Button 
+        key="vision-button-v2"
         variant="hero" 
         size="lg"
         onClick={() => setShowVision(prev => !prev)}
