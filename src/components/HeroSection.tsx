@@ -20,8 +20,8 @@ const HeroSection = () => {
           </p>
         </div>
       </div>
-      {/* Vision section full-width below the intro */}
-      <div className="mt-6" key="vision-container-v2">
+      {/* Vision section within container */}
+      <div className="container mx-auto mt-6" key="vision-container-v2">
         <VisionSection key="vision-section-v2" />
       </div>
     </section>
