@@ -13,7 +13,7 @@ const VisionSection = () => {
       vision: "Co-founder Zenlore and strong experience CTO focused on the right technology decisions. We design the right architecture, make smart build-vs-buy calls, set clear platform standards, and automate the pipeline with observability and security by design—so you scale faster with lower risk and better unit economics. From AI-augmented processes and zero-touch delivery to cloud-native and microservices patterns (incl. blockchain/web3 where it fits), we turn complex requirements into secure, scalable systems and predictable releases—optimized for performance, reliability, and cost.",
       email: "denis@zenlore.com",
       linkedin: "https://linkedin.com/in/denisdoronin",
-      image: "/lovable-uploads/886d4408-bc75-43f1-a56c-de531bb5cbdd.png"
+      image: "/lovable-uploads/2944ba08-d872-42de-9850-3ea644fd767a.png"
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ const VisionSection = () => {
       
       {showVision && (
         <div className="mt-12 animate-fade-in">
-          <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-8 border border-zenlore-gold/20 w-full max-w-[95vw] mx-auto">
+          <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-8 border border-zenlore-gold/20 w-full max-w-[98vw] mx-auto">
             <div className="grid md:grid-cols-2 gap-12">
               {founders.map((founder) => (
                 <div key={founder.id} className="flex flex-col items-center">
