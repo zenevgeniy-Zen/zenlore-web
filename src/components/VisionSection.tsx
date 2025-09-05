@@ -12,7 +12,7 @@ const VisionSection = () => {
       title: "Co-founder & Tech Visionary",
       vision: "Co-founder Zenlore and strong experience CTO focused on the right technology decisions. We design the right architecture, make smart build-vs-buy calls, set clear platform standards, and automate the pipeline with observability and security by design—so you scale faster with lower risk and better unit economics. From AI-augmented processes and zero-touch delivery to cloud-native and microservices patterns (incl. blockchain/web3 where it fits), we turn complex requirements into secure, scalable systems and predictable releases—optimized for performance, reliability, and cost.",
       email: "denis@zenlore.com",
-      linkedin: "https://linkedin.com/in/denisdoronin",
+      linkedin: "https://www.linkedin.com/in/denys-doronin-b0818995/",
       image: "/lovable-uploads/b4d95826-de61-4599-936d-e7227e0beb7e.png"
     },
     {
@@ -21,7 +21,7 @@ const VisionSection = () => {
       title: "Co-founder & Managing Partner",
       vision: "Co-founder Zenlore and leader with strong management experience across global, cross-functional teams. We bring together professionals who share our vision: to turn any chaos into clarity—aligning stakeholders, installing lean processes, and driving predictable, high-quality delivery. We help teams of any size — from lean startups to global enterprises — deliver with clarity and confidence.",
       email: "eugene@zenlore.com",
-      linkedin: "https://linkedin.com/in/eugenegulyakin",
+      linkedin: "https://www.linkedin.com/in/eugene-g-11a29115a",
       image: "/lovable-uploads/32a2a6b3-816e-409b-b4f0-1b807a657fd4.png"
     }
   ];
