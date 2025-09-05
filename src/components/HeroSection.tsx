@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import VisionDialog from "@/components/VisionDialog";
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -20,14 +21,15 @@ const HeroSection = () => {
           </p>
           
           <div className="animate-slide-up animate-delayed">
-            <Button 
-              variant="hero" 
-              size="lg"
-              onClick={() => scrollToSection('mission')}
-              className="px-8 py-3"
-            >
-              EXPLORE OUR VISION
-            </Button>
+            <VisionDialog>
+              <Button 
+                variant="hero" 
+                size="lg"
+                className="px-8 py-3"
+              >
+                EXPLORE OUR VISION
+              </Button>
+            </VisionDialog>
           </div>
         </div>
       </div>
