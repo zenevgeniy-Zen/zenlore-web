@@ -44,7 +44,8 @@ const VisionSection = () => {
       
       {showVision && (
         <div className="mt-12 animate-fade-in">
-          <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-8 border border-zenlore-gold/20 w-full max-w-[98vw] mx-auto">
+          <div className="container mx-auto">
+            <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-8 border border-zenlore-gold/20 max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12">
               {founders.map((founder) => (
                 <div key={founder.id} className="flex flex-col items-center">
@@ -93,6 +94,7 @@ const VisionSection = () => {
                   </div>
                 </div>
               ))}
+            </div>
             </div>
           </div>
         </div>
