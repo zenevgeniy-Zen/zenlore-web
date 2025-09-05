@@ -31,14 +31,17 @@ const VisionSection = () => {
       <Button 
         variant="hero" 
         size="lg"
-        onClick={() => {
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
           console.log("VisionSection button clicked, current showVision:", showVision);
           setShowVision(prev => {
-            console.log("Setting showVision to:", !prev);
+            console.log("Setting showVision from", prev, "to", !prev);
             return !prev;
           });
         }}
         className="px-8 py-3"
+        type="button"
       >
         EXPLORE OUR VISION {showVision ? '△' : '▽'}
       </Button>
