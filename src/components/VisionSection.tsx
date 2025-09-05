@@ -31,7 +31,13 @@ const VisionSection = () => {
       <Button 
         variant="hero" 
         size="lg"
-        onClick={() => setShowVision(prev => !prev)}
+        onClick={() => {
+          console.log("VisionSection button clicked, current showVision:", showVision);
+          setShowVision(prev => {
+            console.log("Setting showVision to:", !prev);
+            return !prev;
+          });
+        }}
         className="px-8 py-3"
       >
         EXPLORE OUR VISION {showVision ? '△' : '▽'}
