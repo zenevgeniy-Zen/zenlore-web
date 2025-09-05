@@ -19,12 +19,12 @@ const VisionSection = () => {
     },
     {
       id: 2,
-      name: "Co-Founder Name 2", 
-      title: "CTO & Strategic Innovation",
-      vision: "Vision statement placeholder text for the second co-founder. This will be replaced with actual content later.",
-      email: "founder2@zenlore.com",
-      linkedin: "https://linkedin.com/in/founder2",
-      image: "/placeholder.svg" // placeholder image
+      name: "Eugene Guliakin", 
+      title: "Co-founder & CEO",
+      vision: "Co-founder Zenlore and leader with strong management experience across global, cross-functional teams. We bring together professionals who share our vision: to turn any chaos into clarity—aligning stakeholders, installing lean processes, and driving predictable, high-quality delivery. We help teams of any size — from lean startups to global enterprises — deliver with clarity and confidence.",
+      email: "eugene@zenlore.com",
+      linkedin: "https://linkedin.com/in/eugenegulyakin",
+      image: "/lovable-uploads/32a2a6b3-816e-409b-b4f0-1b807a657fd4.png"
     }
   ];
 
