@@ -45,58 +45,56 @@ const VisionSection = () => {
       
       {showVision && (
         <div className="mt-12 animate-fade-in">
-          <h3 className="text-2xl font-bold text-zenlore-navy text-center mb-8 uppercase tracking-wide">
-            OUR VISION
-          </h3>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {founders.map((founder) => (
-              <div key={founder.id} className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-6 border border-zenlore-gold/20">
-                {/* Founder Photo */}
-                <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-zenlore-gray/20">
-                  <img 
-                    src={founder.image} 
-                    alt={founder.name}
-                    className="w-full h-full object-cover"
-                  />
+          <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-8 border border-zenlore-gold/20 max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12">
+              {founders.map((founder) => (
+                <div key={founder.id} className="flex flex-col items-center">
+                  {/* Founder Photo - прямоугольное и большое */}
+                  <div className="w-64 h-80 mb-6 overflow-hidden rounded-lg bg-zenlore-gray/20">
+                    <img 
+                      src={founder.image} 
+                      alt={founder.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  
+                  {/* Founder Info */}
+                  <div className="text-center">
+                    <h4 className="text-2xl font-semibold text-zenlore-navy mb-2">
+                      {founder.name}
+                    </h4>
+                    <p className="text-zenlore-gold font-medium mb-6 text-lg">
+                      {founder.title}
+                    </p>
+                    <p className="text-zenlore-navy/80 leading-relaxed text-base mb-8">
+                      {founder.vision}
+                    </p>
+                    
+                    {/* Contact Links */}
+                    <div className="flex justify-center gap-4">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => window.open(`mailto:${founder.email}`, '_blank')}
+                        className="flex items-center gap-2"
+                      >
+                        <Mail className="w-4 h-4" />
+                        Email
+                      </Button>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => window.open(founder.linkedin, '_blank')}
+                        className="flex items-center gap-2"
+                      >
+                        <Linkedin className="w-4 h-4" />
+                        LinkedIn
+                      </Button>
+                    </div>
+                  </div>
                 </div>
-                
-                {/* Founder Info */}
-                <div className="text-center mb-6">
-                  <h4 className="text-xl font-semibold text-zenlore-navy mb-2">
-                    {founder.name}
-                  </h4>
-                  <p className="text-zenlore-gold font-medium mb-4">
-                    {founder.title}
-                  </p>
-                  <p className="text-zenlore-navy/80 leading-relaxed text-sm">
-                    {founder.vision}
-                  </p>
-                </div>
-                
-                {/* Contact Links */}
-                <div className="flex justify-center gap-4">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => window.open(`mailto:${founder.email}`, '_blank')}
-                    className="flex items-center gap-2"
-                  >
-                    <Mail className="w-4 h-4" />
-                    Email
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => window.open(founder.linkedin, '_blank')}
-                    className="flex items-center gap-2"
-                  >
-                    <Linkedin className="w-4 h-4" />
-                    LinkedIn
-                  </Button>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       )}
