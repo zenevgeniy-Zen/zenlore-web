@@ -44,13 +44,13 @@ const VisionSection = () => {
       
       {showVision && (
         <div className="mt-12 animate-fade-in">
-          <div className="container mx-auto">
-            <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-8 border border-zenlore-gold/20 max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12">
+          <div className="container mx-auto px-4">
+            <div className="bg-gradient-to-r from-zenlore-gray/10 to-zenlore-gold/10 rounded-lg p-4 md:p-8 border border-zenlore-gold/20 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
               {founders.map((founder) => (
                 <div key={founder.id} className="flex flex-col items-center">
-                  {/* Founder Photo - прямоугольное и большое */}
-                  <div className="w-64 h-80 mb-6 overflow-hidden rounded-lg bg-zenlore-gray/20">
+                  {/* Founder Photo - responsive sizing */}
+                  <div className="w-48 h-60 md:w-64 md:h-80 mb-6 overflow-hidden rounded-lg bg-zenlore-gray/20 flex-shrink-0">
                     <img 
                       src={founder.image} 
                       alt={founder.name}
