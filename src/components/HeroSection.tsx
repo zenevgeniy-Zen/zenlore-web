@@ -18,11 +18,11 @@ const HeroSection = () => {
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
             Empowering Ideas, Balancing Technology.
           </p>
-          
-          <div className="animate-slide-up animate-delayed">
-            <VisionSection />
-          </div>
         </div>
+      </div>
+      {/* Vision section full-width below the intro */}
+      <div className="mt-6">
+        <VisionSection />
       </div>
     </section>
   );
