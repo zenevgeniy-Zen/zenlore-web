@@ -4,6 +4,8 @@ import { Mail, Linkedin } from "lucide-react";
 
 const VisionSection = () => {
   const [showVision, setShowVision] = useState(false);
+  
+  console.log("VisionSection: showVision =", showVision);
 
   const founders = [
     {
@@ -35,7 +37,11 @@ const VisionSection = () => {
         onClick={(e) => {
           e.preventDefault();
           e.stopPropagation();
-          setShowVision(prev => !prev);
+          console.log("Button clicked, showVision before:", showVision);
+          setShowVision(prev => {
+            console.log("Setting showVision to:", !prev);
+            return !prev;
+          });
         }}
         className="px-8 py-3"
       >
