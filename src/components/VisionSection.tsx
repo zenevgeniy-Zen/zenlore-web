@@ -18,11 +18,11 @@ const VisionSection = () => {
     {
       id: 2,
       name: "Eugene Guliakin", 
-      title: "Co-founder & CEO",
+      title: "Co-founder & Managing Partner",
       vision: "Co-founder Zenlore and leader with strong management experience across global, cross-functional teams. We bring together professionals who share our vision: to turn any chaos into clarity—aligning stakeholders, installing lean processes, and driving predictable, high-quality delivery. We help teams of any size — from lean startups to global enterprises — deliver with clarity and confidence.",
       email: "eugene@zenlore.com",
       linkedin: "https://linkedin.com/in/eugenegulyakin",
-      image: "/lovable-uploads/32a2a6b3-816e-409b-b4f0-1b807a657fd4.png"
+      image: "/lovable-uploads/1cb92f9c-c840-40c9-b1ee-ec9a84f5757b.png"
     }
   ];
 
