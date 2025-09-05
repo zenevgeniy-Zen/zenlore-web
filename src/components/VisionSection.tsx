@@ -32,7 +32,11 @@ const VisionSection = () => {
         key="vision-button-v2"
         variant="hero" 
         size="lg"
-        onClick={() => setShowVision(prev => !prev)}
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          setShowVision(prev => !prev);
+        }}
         className="px-8 py-3"
       >
         EXPLORE OUR VISION {showVision ? '△' : '▽'}
