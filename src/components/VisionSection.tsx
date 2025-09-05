@@ -26,9 +26,6 @@ const VisionSection = () => {
     }
   ];
 
-  console.log('VisionSection render:', { showVision, foundersLength: founders.length });
-  console.log('Founders data:', founders);
-
   return (
     <div>
       <Button 
