@@ -4,6 +4,8 @@ import { Mail, Linkedin } from "lucide-react";
 
 const VisionSection = () => {
   const [showVision, setShowVision] = useState(false);
+  
+  console.log("VisionSection rendered, showVision:", showVision);
 
   const founders = [
     {
