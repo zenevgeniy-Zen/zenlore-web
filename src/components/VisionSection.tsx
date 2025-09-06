@@ -28,6 +28,7 @@ const VisionSection = () => {
 
   console.log('VisionSection render:', { showVision, foundersLength: founders.length });
   console.log('Founders data:', founders);
+  console.log('Button clicked, new showVision state will be:', !showVision);
 
   return (
     <div>
